@@ -43,10 +43,8 @@ Available observations of Potential Vorticity       |
 
 ### Data sequence and use
  
-The SSH reconstructions are assessed over the period from 2012-10-22 to 2012-12-02: 42 days, which is equivalent to two SWOT cycles in the SWOT science phase orbit.
-For reconstruction methods that need a spin-up, the **observations** can be used from 2012-10-01 until the beginning of the evaluation period (21 days). This spin-up period is not included in the evaluation. For reconstruction methods that need learning from full fields, the **reference data** can be used from 2013-01-02 to 2013-09-30. The reference data between 2012-12-02 and 2013-01-02 should never be used so that any learning period or other method-related-training period can be considered uncorrelated to the evaluation period.
 
-![Data Sequence](figures/DC-data_availability.png)
+
 
 ## Leaderboard
 
@@ -82,6 +80,8 @@ To start out download the dataset from the data server, use:
 !wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/dc2022b_q/qg_sim.nc
 
 ```
+
+
 and then uncompress the files using `tar -xvf <file>.tar.gz`. You may also use `ftp`, `rsync` or `curl`to donwload the data.
 **The inputs are stored in the variable *ssh_karin* and the targets are stored in the variable *ssh_true.**
 
@@ -128,3 +128,4 @@ You're now good to go !
 ## Acknowledgement
 
 The structure of this data challenge was to a large extent inspired by [ocean-data-challenges/2020a_SSH_mapping_NATL60](https://github.com/ocean-data-challenges/2020a_SSH_mapping_NATL60) and [ocean-data-challenges/2021a_SSH_mapping_OSE](https://github.com/ocean-data-challenges/2021a_SSH_mapping_OSE).
+
