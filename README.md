@@ -128,7 +128,7 @@ Cross-functional modules are gathered in the `src` directory. They include tools
  
  
 
-# 4. To compete 
+# 5. To compete 
 
 ## Leaderboard
 
@@ -143,7 +143,7 @@ Cross-functional modules are gathered in the `src` directory. They include tools
 **λx**: minimum spatial scale resolved.  
 **λt**: minimum time scale resolved. 
 
-# 5. Acknowledgement
+# 6. Acknowledgement
 
 The structure of this data challenge was to a large extent inspired by [ocean-data-challenges/2020a_SSH_mapping_NATL60](https://github.com/ocean-data-challenges/2020a_SSH_mapping_NATL60) and [ocean-data-challenges/2021a_SSH_mapping_OSE](https://github.com/ocean-data-challenges/2021a_SSH_mapping_OSE).
 
