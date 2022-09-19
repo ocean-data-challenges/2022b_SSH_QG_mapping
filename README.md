@@ -1,11 +1,11 @@
 
 # Altimetric mapping on quasi-geostrophy model Data Challenge 
 
-A challenge on mapping pseudo altimetric data on a quasi-geostrophic model created by Datlas and MEOM-IGE. 
+A challenge on mapping pseudo altimetric data on a QG model created by Datlas and MEOM-IGE. 
  
 <img src="figures/DC_SSH_QG_mapping-banner.png" />
 
-This repository contains codes and sample notebooks for downloading and processing the SSH mapping data challenge.
+This repository contains codes and sample notebooks for downloading and processing the SSH QG mapping data challenge.
  
 
 ## Context and motivation
@@ -14,13 +14,13 @@ After several altimetric mapping challenges have been proposed to the oceanograp
 
 ### General goal
 
-The goal is to investigate how to best reconstruct sequences of sea surface height (SSH) maps from partial satellite altimetric observations. The end goal is to have efficient methods that are able to extrapole information from the partial (in time and space) satellite data in order to generate fully resolved maps of the ocean surface at all time. In this experimental context, i.e., where we know the underlying "true" fields we want to reconstruct, the methods' performance is assessed by directly comparing the methods' reconstructed fields to the "true" fields in terms of point-wise difference of SSH and corresponding velocities, spectral energy distribution ... (see Diagnostics).  
+The goal is to investigate how to best reconstruct sequences of sea surface height (SSH) maps from partial satellite altimetric observations. The end goal is to have efficient methods that are able to extrapolate information from the partial (in time and space) satellite data in order to generate fully resolved maps of the ocean surface at all time. In this OSSE experimental context -- i.e. where we know the underlying "true" fields we want to reconstruct -- the methods' performances are assessed by directly comparing the methods' reconstructed fields to the "true" fields in terms of point-wise difference of SSH and its corresponding velocities, spectral energy distribution ... (see Diagnostics).  
 
 ### Experimental mindset
 
-To simplify the realistic altimetric problem, the proposed DC is working on an idealistic dynamic: the quasi-geostrophic motions that can mimic the actual ocean in certain geographic regions but that is much simpler than the entire 4 dimensional ocean dynamics. 
+To simplify the realistic altimetric problem, the proposed DC is set using an idealized dynamic: the quasi-geostrophic motions which can mimic the actual surface ocean dynamics in certain geographic regions but is much simpler than the global four dimensional ocean dynamics. 
 
-The observations that are available for the reconstruction are generated as Nadir-altimeters that fly repeatedly over "our quasi-geostrophic ocean" providing a one-dimensional look of the ocean sea surface height. 
+The observations that are made available for the reconstruction are generated to mimic Nadir-altimeters that fly repeatedly over "our quasi-geostrophic ocean" providing a one-dimensional look of the ocean sea surface height. 
 
 A baseline reconstruction method is provided (see below) and the practical goal of the challenge is to beat this baseline according to scores also described below and in Jupyter notebooks.
 
@@ -105,7 +105,7 @@ Cross-functional modules are gathered in the `src` directory. They include tools
 
 Clone the data challenge repo: 
 ```
-git clone https://github.com/ocean-data-challenges/ 
+git clone https://github.com/ocean-data-challenges/2022b_SSH_QG_mapping.git
 ```
 create the data challenge conda environment, named env-dc-swot-filtering, by running the following command:
 ```
