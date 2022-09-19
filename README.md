@@ -89,13 +89,12 @@ The data needed for the DC are presented with the following directory structure:
 
 ```
 .
-|-- dc_model
-|   |-- ssh_qg_model.nc
+|-- qg_sim.nc
 
 ```
 
 
-To start out download the dataset from the data server, use:
+To start out download the dataset from the data server in your notebook by running the following command:
 
 ```shell
 !wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/dc2022b_q/qg_sim.nc
@@ -103,8 +102,8 @@ To start out download the dataset from the data server, use:
 ```
 
 
-and then uncompress the files using `tar -xvf <file>.tar.gz`. You may also use `ftp`, `rsync` or `curl`to donwload the data.
-**The inputs are stored in the variable *ssh_karin* and the targets are stored in the variable *ssh_true.**
+[//]: # and then uncompress the files using `tar -xvf <file>.tar.gz`. You may also use `ftp`, `rsync` or `curl`to donwload the data.
+[//]: # **The inputs are stored in the variable *ssh_karin* and the targets are stored in the variable *ssh_true.**
 
 
  
