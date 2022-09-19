@@ -3,7 +3,7 @@
 
 A challenge on mapping pseudo altimetric data on a quasi-geostrophic model created by Datlas and MEOM-IGE. 
  
-<img src="figures/DC_QG_mapping.png" />
+<img src="figures/DC_SSH_QG_mapping-banner.png" />
 
 This repository contains codes and sample notebooks for downloading and processing the SSH mapping data challenge.
  
