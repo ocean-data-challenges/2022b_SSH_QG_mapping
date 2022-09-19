@@ -101,10 +101,10 @@ To start out download the dataset from the data server in your notebook by runni
 
 ```
 
-
-[//]: # and then uncompress the files using `tar -xvf <file>.tar.gz`. You may also use `ftp`, `rsync` or `curl`to donwload the data.
-[//]: # **The inputs are stored in the variable *ssh_karin* and the targets are stored in the variable *ssh_true.**
-
+<!--- IF WE NEED TO UNCOMPRESS THE DATA 
+and then uncompress the files using `tar -xvf <file>.tar.gz`. You may also use `ftp`, `rsync` or `curl`to donwload the data.
+**The inputs are stored in the variable *ssh_karin* and the targets are stored in the variable *ssh_true.**
+-->
 
  
 ## Quick start
