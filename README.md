@@ -116,13 +116,13 @@ You can follow the quickstart guide in [this notebook](quickstart.ipynb).
 
 Cross-functional modules are gathered in the `src` directory. They include tools for regridding, plots, evaluation, writing and reading NetCDF files. The directory also contains a module that implements the baseline method. These functionalities are described and illustrated in the following notebooks. 
 
-- evaluate_the_baseline.ipynb
+- **evaluate_the_baseline.ipynb**
  
-- perform_the_baseline.ipynb
+- **perform_the_baseline.ipynb**
 
-- understand_the_data.ipynb
+- **understand_the_data.ipynb**
 
-- understand_the_diagnostics.ipynb
+- **understand_the_diagnostics.ipynb**
  
  
 
