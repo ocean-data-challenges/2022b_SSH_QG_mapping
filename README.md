@@ -50,7 +50,7 @@ Available observations of Potential Vorticity       |
 
 | Method     |   µ(RMSE) |   σ(RMSE) |   λx (degree) |   λt (days) | Notes                     | Reference        |
 |:-----------|------------------------:|---------------------:|-------------------------:|-----------------------:|:--------------------------|:-----------------|
-| baseline OI |        |            |                    |             | Covariances not tuned   |  [example_baseline_oi.ipynb](notebooks/example_baseline_oi.ipynb)|
+| baseline OI |        |            |                    |             | Covariances not tuned   |  [perform_the_baseline.ipynb](notebooks/perform_the_baseline.ipynb)|
 
 
 
@@ -89,7 +89,7 @@ and then uncompress the files using `tar -xvf <file>.tar.gz`. You may also use `
 ## Baseline and evaluation
 
 ### Baseline
-The baseline mapping method is optimal interpolation (OI), in the spirit of the present-day standard for DUACS products provided by AVISO. OI is implemented in the [`baseline_oi`](notebooks/example_baseline_oi.ipynb) Jupyter notebook. The SSH reconstructions are saved as a NetCDF file in the `results` directory. The content of this directory is git-ignored.
+The baseline mapping method is optimal interpolation (OI), in the spirit of the present-day standard for DUACS products provided by AVISO. OI is implemented in the [`perform_the_baseline`](notebooks/perform_the_baseline.ipynb) Jupyter notebook. The SSH reconstructions are saved as a NetCDF file in the `results` directory. The content of this directory is git-ignored.
    
 ### Evaluation
 
