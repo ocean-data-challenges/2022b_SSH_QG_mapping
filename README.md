@@ -41,22 +41,21 @@ The first set up provides observations of the full SSH fields every 5 time steps
 
 Available observations in the 1st set up     |   
 :-------------------------:| 
- ![animation](figures/p_obs_1_movie.gif)  |  
+ <img src="figures/p_obs_1_movie.gif" width="50%" height="50%"/> | 
 
 The second set up provides observations of one-dimensional Nadir-like SSH data every 5 time steps:  
 
 
 Available observations in the 2nd set up     |   
 :-------------------------:|  
- <img src="figures/p_obs_1_movie.gif" width="50%" height="50%"/> | 
+ <img src="figures/p_obs_2_movie.gif" width="50%" height="50%"/> | 
  
 
 The second set up provides observations of one-dimensional Nadir-like SSH data every 30 time steps:  
 
 Available observations in the 3rd set up     |   
 :-------------------------:| 
- ![animation](figures/p_obs_3_movie.gif)  |  
-
+ <img src="figures/p_obs_3_movie.gif" width="50%" height="50%"/> | 
 
 
 ## Data sequence and use
