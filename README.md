@@ -38,19 +38,19 @@ True Potential Vorticity        |  True Stream Function
 
 ## Observations
 
-**A) Available observations in the 1st set up**   
+**A) Available observations in the full SSH field set up**   
 
 The first set up provides observations of the full SSH fields every 5 time steps: 
   
  <img src="figures/p_obs_1_movie.gif" width="50%" height="50%"/> 
 
-**B) Available observations in the 2nd set up** 
+**B) Available observations in the dense alimetric set up** 
 
 The second set up provides observations of one-dimensional Nadir-like SSH data every 5 time steps:  
 
  <img src="figures/p_obs_2_movie.gif" width="50%" height="50%"/> 
  
-**C) Available observations in the 3rd set up**
+**C) Available observations in the realistic altimetric set up**
 
 The third set up provides observations of one-dimensional Nadir-like SSH data every 20 time steps:  
 
