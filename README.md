@@ -47,8 +47,8 @@ The second set up provides observations of one-dimensional Nadir-like SSH data e
 
 
 Available observations in the 2nd set up     |   
-:-------------------------:| 
- ![animation](figures/p_obs_2_movie.gif)  |  
+:-------------------------:|  
+ <img src="figures/p_obs_1_movie.gif" width="50%" height="50%"/> | 
  
 
 The second set up provides observations of one-dimensional Nadir-like SSH data every 30 time steps:  
