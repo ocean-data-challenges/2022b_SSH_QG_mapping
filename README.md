@@ -1,5 +1,5 @@
 
-# Altimetric mapping on quasi-geostrophy model   
+# Altimetric mapping on a quasi-geostrophy model   
 
 A challenge on mapping pseudo altimetric data on a QG model created by Datlas and MEOM-IGE. 
  
@@ -18,28 +18,46 @@ The goal is to investigate how to best reconstruct sequences of sea surface heig
 
 ## Experimental mindset
 
-To simplify the realistic altimetric problem, the proposed DC is set using an idealized dynamic: the quasi-geostrophic motions which can mimic the actual surface ocean dynamics in certain geographic regions but is much simpler than the global four dimensional ocean dynamics. 
+To simplify the realistic altimetric problem, the proposed DC is set using an idealized dynamic: the one layer and a half quasi-geostrophic motions which can mimic the actual ocean surface dynamics in certain geographic regions but is much simpler than the global four dimensional ocean dynamics. 
 
-The observations that are made available for the reconstruction are generated to mimic Nadir-altimeters that fly repeatedly over "our quasi-geostrophic ocean" providing a one-dimensional look of the ocean sea surface height. 
+The DC is composed of three set of observations of increasing realism: 
+- The **full SSH field set up** consists in observing the full SSH fields of "our quasi-geostrophic ocean" every 10 time steps ; 
+- The **dense alimetric data set up** consists in observing pseudo SSH data similar to Nadir-altimeter data from satellites that fly repeatedly over "our quasi-geostrophic ocean" providing a one-dimensional look of the ocean SSH every 10 time steps ;
+- The **realistic altimetric data set up** consists in observing the same observations as in the dense altimetric data set up but with a time frequency of one Nadir-like observation every 50 time steps. 
 
 A baseline reconstruction method is provided (see below) and the practical goal of the challenge is to beat this baseline according to scores also described below and in Jupyter notebooks.
 
 # 2. Specific experimental choices
 
 ## Reference simulation
-The reference simulation is the quasi-geostrophic simulation generated using the [torch-qg](https://github.com/hrkz/torchqg) package. The run can be downloaded from [qg-simulation](https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/dc2022b_q/qg_sim.nc) (see Download the data). 
+The reference simulation is a 1.5 layer quasi-geostrophic simulation generated using the [torch-qg](https://github.com/hrkz/torchqg) package. The run can be downloaded from [qg-simulation](https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/dc2022b_q/qg_sim.nc) (see Download the data). 
 
 True Potential Vorticity        |  True Stream Function  
 :-------------------------:|:-------------------------:
  ![animation](figures/p_movie.gif)  |  ![animation](figures/q_movie.gif) 
 
 ## Observations
-The SSH observations include simulations of Topex-Poseidon, Jason 1, Geosat Follow-On, Envisat, and SWOT altimeter data. This nadir altimeters constellation was operating during the 2003-2005 period and is still considered as a historical optimal constellation in terms of spatio-temporal coverage. The data challenge simulates the addition of SWOT to this reference constellation. No observation error is considered in this challenge.
+The first set up provides observations of the full SSH fields every 10 time steps: 
+
+Available observations in the 1st set up     |   
+:-------------------------:| 
+ ![animation](figures/p_obs_1_movie.gif)  |  
+
+The second set up provides observations of one-dimensional Nadir-like SSH data every 10 time steps:  
 
 
-Available observations of Potential Vorticity       |   
+Available observations in the 2nd set up     |   
 :-------------------------:| 
  ![animation](figures/obs_p_movie.gif)  |  
+ 
+
+The second set up provides observations of one-dimensional Nadir-like SSH data every 50 time steps:  
+
+Available observations in the 3rd set up     |   
+:-------------------------:| 
+ ![animation](figures/obs_p_movie.gif)  |  
+
+
 
 ## Data sequence and use
 
@@ -130,11 +148,33 @@ Cross-functional modules are gathered in the `src` directory. They include tools
 
 # 5. To compete 
 
-## Leaderboard
+## A) Full SSH field set up  
+
+**Leaderboard**
 
 | Method     |   µ(RMSE) |   σ(RMSE) |   λx (degree) |   λt (days) | Notes                     | Reference        |
 |:-----------|------------------------:|---------------------:|-------------------------:|-----------------------:|:--------------------------|:-----------------|
 | baseline OI |        |            |                    |             | Covariances not tuned   |  [perform_the_baseline.ipynb](notebooks/perform_the_baseline.ipynb)|
+
+
+## B) Dense alimetric data set up
+
+**Leaderboard**
+
+| Method     |   µ(RMSE) |   σ(RMSE) |   λx (degree) |   λt (days) | Notes                     | Reference        |
+|:-----------|------------------------:|---------------------:|-------------------------:|-----------------------:|:--------------------------|:-----------------|
+| baseline OI |        |            |                    |             | Covariances not tuned   |  [perform_the_baseline.ipynb](notebooks/perform_the_baseline.ipynb)|
+
+
+
+## C) Realistic alimetric data set up
+
+**Leaderboard**
+
+| Method     |   µ(RMSE) |   σ(RMSE) |   λx (degree) |   λt (days) | Notes                     | Reference        |
+|:-----------|------------------------:|---------------------:|-------------------------:|-----------------------:|:--------------------------|:-----------------|
+| baseline OI |        |            |                    |             | Covariances not tuned   |  [perform_the_baseline.ipynb](notebooks/perform_the_baseline.ipynb)|
+
 
 
 
