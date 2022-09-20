@@ -21,9 +21,9 @@ The goal is to investigate how to best reconstruct sequences of sea surface heig
 To simplify the realistic altimetric problem, the proposed DC is set using an idealized dynamic: the one layer and a half quasi-geostrophic motions which can mimic the actual ocean surface dynamics in certain geographic regions but is much simpler than the global four dimensional ocean dynamics. 
 
 The DC is composed of three set of observations of increasing realism: 
-- The **full SSH field set up** consists in observing the full SSH fields of "our quasi-geostrophic ocean" every 10 time steps ; 
-- The **dense alimetric data set up** consists in observing pseudo SSH data similar to Nadir-altimeter data from satellites that fly repeatedly over "our quasi-geostrophic ocean" providing a one-dimensional look of the ocean SSH every 10 time steps ;
-- The **realistic altimetric data set up** consists in observing the same observations as in the dense altimetric data set up but with a time frequency of one Nadir-like observation every 50 time steps. 
+- The **full SSH field set up** consists in observing the full SSH fields of "our quasi-geostrophic ocean" every 5 time steps ; 
+- The **dense alimetric data set up** consists in observing pseudo SSH data similar to Nadir-altimeter data from satellites that fly repeatedly over "our quasi-geostrophic ocean" providing a one-dimensional look of the ocean SSH every 5 time steps ;
+- The **realistic altimetric data set up** consists in observing the same observations as in the dense altimetric data set up but with a time frequency of one Nadir-like observation every 30 time steps. 
 
 A baseline reconstruction method is provided (see below) and the practical goal of the challenge is to beat this baseline according to scores also described below and in Jupyter notebooks.
 
@@ -37,25 +37,25 @@ True Potential Vorticity        |  True Stream Function
  ![animation](figures/p_movie.gif)  |  ![animation](figures/q_movie.gif) 
 
 ## Observations
-The first set up provides observations of the full SSH fields every 10 time steps: 
+The first set up provides observations of the full SSH fields every 5 time steps: 
 
 Available observations in the 1st set up     |   
 :-------------------------:| 
  ![animation](figures/p_obs_1_movie.gif)  |  
 
-The second set up provides observations of one-dimensional Nadir-like SSH data every 10 time steps:  
+The second set up provides observations of one-dimensional Nadir-like SSH data every 5 time steps:  
 
 
 Available observations in the 2nd set up     |   
 :-------------------------:| 
- ![animation](figures/obs_p_movie.gif)  |  
+ ![animation](figures/p_obs_2_movie.gif)  |  
  
 
-The second set up provides observations of one-dimensional Nadir-like SSH data every 50 time steps:  
+The second set up provides observations of one-dimensional Nadir-like SSH data every 30 time steps:  
 
 Available observations in the 3rd set up     |   
 :-------------------------:| 
- ![animation](figures/obs_p_movie.gif)  |  
+ ![animation](figures/p_obs_3_movie.gif)  |  
 
 
 
