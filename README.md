@@ -134,13 +134,14 @@ Cross-functional modules are gathered in the `src` directory. They include tools
 
 ## Illustrative notebooks 
 
-- [**evaluate_the_baseline.ipynb**](notebooks/evaluate_the_baseline.ipynb)
  
-- [**perform_the_baseline.ipynb**](notebooks/perform_the_baseline.ipynb)
+- [**understand_the_data.ipynb**](notebooks/understand_the_data.ipynb) documents how to access & manipulate the input datasets of the data challenge.
 
-- [**understand_the_data.ipynb**](notebooks/understand_the_data.ipynb)
+- [**understand_the_diagnostics.ipynb**](notebooks/understand_the_diagnostics.ipynb) documents the available diagnostics & illustrate their uses.
 
-- [**understand_the_diagnostics.ipynb**](notebooks/understand_the_diagnostics.ipynb)
+- [**perform_the_baseline.ipynb**](notebooks/perform_the_baseline.ipynb) shows how to address the data challenge by performing the baseline: an optimal interpolation.
+
+- [**evaluate_the_baseline.ipynb**](notebooks/evaluate_the_baseline.ipynb) illustrates how to evaluate a mapping reconstruction, here, produced with the baseline.
  
  
 
