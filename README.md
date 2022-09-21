@@ -134,13 +134,13 @@ Cross-functional modules are gathered in the `src` directory. They include tools
 
 ## Illustrative notebooks 
 
-- **evaluate_the_baseline.ipynb**
+- [**evaluate_the_baseline.ipynb**](notebooks/evaluate_the_baseline.ipynb)
  
-- **perform_the_baseline.ipynb**
+- [**perform_the_baseline.ipynb**](notebooks/perform_the_baseline.ipynb)
 
-- **understand_the_data.ipynb**
+- [**understand_the_data.ipynb**](notebooks/understand_the_data.ipynb)
 
-- **understand_the_diagnostics.ipynb**
+- [**understand_the_diagnostics.ipynb**](notebooks/understand_the_diagnostics.ipynb)
  
  
 
