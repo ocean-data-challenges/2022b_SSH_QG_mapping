@@ -127,7 +127,7 @@ and then uncompress the files using `tar -xvf <file>.tar.gz`. You may also use `
 You can follow the quickstart guide in [this notebook](quickstart.ipynb). 
 
 
-# 4. To further understand  
+# 4. To further practise  
 
 
 Cross-functional modules are gathered in the `src` directory. They include tools for regridding, plots, evaluation, writing and reading NetCDF files. The directory also contains a module that implements the baseline method. These functionalities are described and illustrated in the following notebooks. 
