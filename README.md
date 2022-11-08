@@ -32,29 +32,35 @@ A baseline reconstruction method is provided (see below) and the practical goal 
 ## Reference simulation
 The reference simulation is a 1.5 layer quasi-geostrophic simulation generated using the [torch-qg](https://github.com/hrkz/torchqg) package. The run can be downloaded from [qg-simulation](https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/dc2022b_q/qg_sim.nc) (see Download the data). 
 
-True Potential Vorticity        |  True Stream Function  
-:-------------------------:|:-------------------------:
- ![animation](figures/p_movie.gif)  |  ![animation](figures/q_movie.gif) 
+True SSH      
+:-------------------------: 
+ ![animation](figures/ssh_eval_movie.gif)  
 
 ## Observations
 
-**A) Available observations in the full SSH field set up**   
+**A) Managing observations sparse in time: full SSH field set up**   
 
-The first set up provides observations of the full SSH fields every 5 time steps: 
-  
- <img src="figures/p_obs_1_movie.gif" width="50%" height="50%"/> 
+The first set up provides observations of the full SSH fields every 5 time steps:  
+ 
+True SSH        |  Full field observation (A)  
+:-------------------------:|:-------------------------:
+ ![animation](figures/ssh_eval_movie.gif)  |  ![animation](figures/ssh_obs_fullfields_movie.gif) 
 
-**B) Available observations in the dense alimetric set up** 
+**B) Managing observations sparse in space: everyday jason1 set up** 
 
 The second set up provides observations of one-dimensional Nadir-like SSH data every 5 time steps:  
 
- <img src="figures/p_obs_2_movie.gif" width="50%" height="50%"/> 
+True SSH        |  Full field observation (A)  
+:-------------------------:|:-------------------------:
+ ![animation](figures/ssh_eval_movie.gif)  |  ![animation](figures/ssh_obs_jasonlike_movie.gif) 
  
-**C) Available observations in the realistic altimetric set up**
+**C) Managing realistic observations in space and time: realistic altimetric set up**
 
 The third set up provides observations of one-dimensional Nadir-like SSH data every 20 time steps:  
 
- <img src="figures/p_obs_3_movie.gif" width="50%" height="50%"/>  
+True SSH        |  Full field observation (A)  
+:-------------------------:|:-------------------------:
+ ![animation](figures/ssh_eval_movie.gif)  |  ![animation](figures/ssh_obs_nadirlike_movie.gif) 
 
 
 ## Data sequence and use
