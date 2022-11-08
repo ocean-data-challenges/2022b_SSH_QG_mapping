@@ -18,12 +18,12 @@ The goal is to investigate how to best reconstruct sequences of sea surface heig
 
 ## Experimental mindset
 
-To simplify the realistic altimetric problem, the proposed DC is set using an idealized dynamic: the one layer and a half quasi-geostrophic motions which can mimic the actual ocean surface dynamics in certain geographic regions but is much simpler than the global four dimensional ocean dynamics. 
+To simplify the realistic altimetric problem, the proposed DC is set using an idealized dynamic: a one layer and a half quasi-geostrophic motions (see for instance Ubelmann et al., 2015) which can mimic the actual ocean surface dynamics in certain geographic regions but is much simpler than the global four dimensional ocean dynamics. 
 
 The DC is composed of three set of observations of increasing realism: 
-- The **full SSH field set up** consists in observing the full SSH fields of "our quasi-geostrophic ocean" every 5 time steps ; 
-- The **dense alimetric data set up** consists in observing pseudo SSH data similar to Nadir-altimeter data from satellites that fly repeatedly over "our quasi-geostrophic ocean" providing a one-dimensional look of the ocean SSH every 5 time steps ;
-- The **realistic altimetric data set up** consists in observing the same observations as in the dense altimetric data set up but with a time frequency of one Nadir-like observation every 20 time steps. 
+- Managing observations sparse in time: the **Full field observations (A) set up** consists in observing the full SSH fields of "our quasi-geostrophic ocean" every 5 day ; 
+- Managing observations sparse in space: the **Everyday jason1 observations (B) set up** consists in observing pseudo SSH data similar to the Nadir-altimeter Jason1 data (as it would have seen the ocean over 42 days) but providing a one-dimensional look of  "our quasi-geostrophic ocean" SSH every day ;
+- Managing realistic observations: the **Realistic observations (C) set up** consists in observing "our quasi-geostrophic ocean" with similar space and time observation density as a constellation of 4 Nadir satellites (Envisat, Jason1, Geosat2 and Topex-Poseidon). 
 
 A baseline reconstruction method is provided (see below) and the practical goal of the challenge is to beat this baseline according to scores also described below and in Jupyter notebooks.
 
@@ -40,7 +40,7 @@ True SSH
 
 **A) Managing observations sparse in time: full SSH field set up**   
 
-The first set up provides observations of the full SSH fields every 5 time steps:  
+The first set up provides observations of the full SSH fields every 5 day:  
  
 True SSH        |  Full field observations (A)  
 :-------------------------:|:-------------------------:
@@ -48,22 +48,24 @@ True SSH        |  Full field observations (A)
 
 **B) Managing observations sparse in space: everyday jason1 set up** 
 
-The second set up provides observations of one-dimensional Nadir-like SSH data every 5 time steps:  
+The second set up provides observations of one-dimensional Jason1-like SSH data (corresponding to the full 42 day availability of that satellite data) but available every day:  
 
 True SSH        |  Everyday jason1 observations (B)  
 :-------------------------:|:-------------------------:
  ![animation](figures/ssh_eval_movie.gif)  |  ![animation](figures/ssh_obs_jasonlike_movie.gif) 
  
-**C) Managing realistic observations in space and time: realistic altimetric set up**
+**C) Managing realistic observations: realistic altimetric set up**
 
-The third set up provides observations of one-dimensional Nadir-like SSH data every 20 time steps:  
+The third set up provides observations of one-dimensional Nadir-like SSH data from a constellation of 4 Nadir satellites (Envisat, Jason1, Geosat2 and Topex-Poseidon):  
 
 True SSH        |  Realistic observations (C)  
 :-------------------------:|:-------------------------:
  ![animation](figures/ssh_eval_movie.gif)  |  ![animation](figures/ssh_obs_nadirlike_movie.gif) 
 
 
-## Data sequence and use
+## Understanding the data 
+
+A notebook, that documents and illustrates the data, is available: [`understand_the_data.ipyn`](notebooks/understand_the_data.ipynb)
 
 
 ## Baseline and evaluation
@@ -73,7 +75,7 @@ The baseline mapping method is optimal interpolation (OI), in the spirit of the 
    
 ### Evaluation
 
-The evaluation of the mapping methods is based on the comparison of the SSH reconstructions with the *reference* dataset. It includes two scores, one based on the Root-Mean-Square Error (RMSE), the other based on Fourier wavenumber spectra. The evaluation notebook [`example_data_eval`](example_data_eval.ipynb) implements the computation of these two scores as they could appear in the leaderboard. The notebook also provides additional, graphical diagnostics based on RMSE and spectra.
+The evaluation of the mapping methods is based on the comparison of the SSH reconstructions with the *reference* dataset. It includes two scores, one based on the Root-Mean-Square Error (RMSE), the other based on Fourier wavenumber spectra. A notebook, that documents and illustrates the diagnostics, is available: [`understand_the_diagnostics.ipynb`](notebooks/understand_the_diagnostics.ipynb). The evaluation notebook [`evaluate_the_baseline`](evaluate_the_baseline.ipynb) implements the computation of these two scores as they could appear in the leaderboard. The notebook also provides additional, graphical diagnostics based on RMSE and spectra.
  
 
 # 3. To get started 
@@ -107,26 +109,48 @@ You're now good to go !
 
 ## Download the data
 
-The data needed for the DC are presented with the following directory structure:
+The data needed for the DC are available [here](https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/2022b_SSH_QG_mapping) presented with the following directory structure:
 
 ```
 .
-|-- qg_sim.nc
+|-- dc_qg_eval
+|-- dc_qg_obs_fullfields
+|-- dc_qg_obs_jasonlike
+|-- dc_qg_obs_nadirlike
+|-- dc_qg_train
 
 ```
 
 
-To start out download the dataset from the data server in your notebook by running the following command:
+To start out download the reference dataset during the evaluation period from the data server in your notebook by running the following command:
 
 ```shell
-!wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/dc2022b_q/qg_sim.nc
-
+!wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/2022b_SSH_QG_mapping/dc_qg_eval.tar.gz
 ```
 
-<!--- IF WE NEED TO UNCOMPRESS THE DATA 
-and then uncompress the files using `tar -xvf <file>.tar.gz`. You may also use `ftp`, `rsync` or `curl`to donwload the data.
-**The inputs are stored in the variable *ssh_karin* and the targets are stored in the variable *ssh_true.**
--->
+Then, download the observation datasets (for the 3 set ups) from the data server in your notebook by running the following command:
+
+```shell
+!wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/2022b_SSH_QG_mapping/dc_qg_obs_fullfields.tar.gz
+```
+
+```shell
+!wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/2022b_SSH_QG_mapping/dc_qg_obs_jasonlike.tar.gz
+```
+
+```shell
+!wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/2022b_SSH_QG_mapping/dc_qg_obs_nadirlike.tar.gz
+```
+
+
+For training purposes you can also download the training dataset, in which the data are uncorrelated to the evaluation data, from the data server in your notebook by running the following command:
+
+```shell
+!wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/2022b_SSH_QG_mapping/dc_qg_train.tar.gz
+```
+
+And then uncompress the files using `tar -xvf <file>.tar.gz`. You may also use `ftp`, `rsync` or `curl`to donwload the data.
+**The SSH data is stored in the variable *ssh*.** 
 
  
 ## Quick start
@@ -192,3 +216,8 @@ Cross-functional modules are gathered in the `src` directory. They include tools
 
 The structure of this data challenge was to a large extent inspired by [ocean-data-challenges/2020a_SSH_mapping_NATL60](https://github.com/ocean-data-challenges/2020a_SSH_mapping_NATL60) and [ocean-data-challenges/2021a_SSH_mapping_OSE](https://github.com/ocean-data-challenges/2021a_SSH_mapping_OSE).
 
+
+
+# 7. References
+
+- Ubelmann, C., Klein, P., & Fu, L. L. (2015). Dynamic interpolation of sea surface height and potential applications for future high-resolution altimetry mapping. Journal of Atmospheric and Oceanic Technology, 32(1), 177-184.
