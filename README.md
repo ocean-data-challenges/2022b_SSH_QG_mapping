@@ -30,7 +30,7 @@ A baseline reconstruction method is provided (see below) and the practical goal 
 # 2. Specific experimental choices
 
 ## Reference simulation
-The reference simulation is a 1.5 layer quasi-geostrophic simulation generated using the model described in Ubelmann et al. (2015). The run can be downloaded from [dc_qg_eval](https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/2022b_SSH_QG_mapping/dc_qg_eval.tar.gz) (see Download the data). 
+The reference simulation is a 1.5 layer quasi-geostrophic simulation generated using the model described in Ubelmann et al. (2015). The run can be downloaded from [dc_qg_eval](https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/2022b_SSH_QG_mapping/dc_qg_eval.tar.gz) (see Download the data section below). 
 
 True SSH      
 :-------------------------: 
@@ -63,19 +63,19 @@ True SSH        |  Realistic observations (C)
  ![animation](figures/ssh_eval_movie.gif)  |  ![animation](figures/ssh_obs_nadirlike_movie.gif) 
 
 
-## Understanding the data 
+**Understanding the data**
 
-A notebook, that documents and illustrates the data, is available: [`understand_the_data.ipyn`](notebooks/understand_the_data.ipynb)
+A notebook that documents and illustrates the data is available: [`understand_the_data.ipyn`](notebooks/understand_the_data.ipynb)
 
 
 ## Baseline and evaluation
 
 ### Baseline
-The baseline mapping method is optimal interpolation (OI), in the spirit of the present-day standard for DUACS products provided by AVISO. OI is implemented in the [`perform_the_baseline`](notebooks/perform_the_baseline.ipynb) Jupyter notebook. The SSH reconstructions are saved as a NetCDF file in the `results` directory. The content of this directory is git-ignored.
+The baseline mapping method is optimal interpolation (OI), in the spirit of the present-day standard for DUACS products provided by AVISO. OI is implemented in the [`perform_the_baseline`](notebooks/perform_the_baseline.ipynb) Jupyter notebook. The SSH reconstructions are saved as a NetCDF file in the `results` directory. The content of this directory is git-ignored so you will have to run it yourself if you want later want to run `evaluate_the_baseline`, for instance.
    
 ### Evaluation
 
-The evaluation of the mapping methods is based on the comparison of the SSH reconstructions with the *reference* dataset. It includes two scores, one based on the Root-Mean-Square Error (RMSE), the other based on Fourier wavenumber spectra. A notebook, that documents and illustrates the diagnostics, is available: [`understand_the_diagnostics.ipynb`](notebooks/understand_the_diagnostics.ipynb). The evaluation notebook [`evaluate_the_baseline`](evaluate_the_baseline.ipynb) implements the computation of these two scores as they could appear in the leaderboard. The notebook also provides additional, graphical diagnostics based on RMSE and spectra.
+The evaluation of the mapping methods is based on the comparison of the SSH reconstructions with the *reference* dataset. It includes two scores, one based on the Root-Mean-Square Error (RMSE), the other based on Fourier wavenumber spectra. A notebook, that documents and illustrates the diagnostics, is available: [`understand_the_diagnostics.ipynb`](notebooks/understand_the_diagnostics.ipynb). The evaluation notebook [`evaluate_the_baseline`](evaluate_the_baseline.ipynb) implements the computation of these two scores as they appear in the leaderboard. The notebook also provides additional, graphical diagnostics based on RMSE and spectra.
  
 
 # 3. To get started 
@@ -102,9 +102,7 @@ then add it to the available kernels for jupyter to see:
 ipython kernel install --name "env-dc-ssh_qg_mapping" --user
 ```
 
-You're now good to go !
-
-[Check out the quickstart](quickstart.ipynb)
+You're now good to go ! 
 
 
 ## Download the data
