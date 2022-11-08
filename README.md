@@ -21,9 +21,9 @@ The goal is to investigate how to best reconstruct sequences of sea surface heig
 To simplify the realistic altimetric problem, the proposed DC is set using an idealized dynamic: a one layer and a half quasi-geostrophic motions (see for instance Ubelmann et al., 2015) which can mimic the actual ocean surface dynamics in certain geographic regions but is much simpler than the global four dimensional ocean dynamics. 
 
 The DC is composed of three set of observations of increasing realism: 
-- Managing observations sparse in time: the **Full field observations (A) set up** consists in observing the full SSH fields of "our quasi-geostrophic ocean" every 5 day ; 
-- Managing observations sparse in space: the **Everyday jason1 observations (B) set up** consists in observing pseudo SSH data similar to the Nadir-altimeter Jason1 data (as it would have seen the ocean over 42 days) but providing a one-dimensional look of  "our quasi-geostrophic ocean" SSH every day ;
-- Managing realistic observations: the **Realistic observations (C) set up** consists in observing "our quasi-geostrophic ocean" with similar space and time observation density as a constellation of 4 Nadir satellites (Envisat, Jason1, Geosat2 and Topex-Poseidon). 
+- Managing observations sparse in time: the **Full field observations (A)** set up consists in observing the full SSH fields of "our quasi-geostrophic ocean" every 5 day ; 
+- Managing observations sparse in space: the **Everyday jason1 observations (B)** set up consists in observing pseudo SSH data similar to the Nadir-altimeter Jason1 data (as it would have seen the ocean over 42 days) but providing a one-dimensional look of  "our quasi-geostrophic ocean" SSH every day ;
+- Managing realistic observations: the **Realistic observations (C)** set up consists in observing "our quasi-geostrophic ocean" with similar space and time observation density as a constellation of 4 Nadir satellites (Envisat, Jason1, Geosat2 and Topex-Poseidon). 
 
 A baseline reconstruction method is provided (see below) and the practical goal of the challenge is to beat this baseline according to scores also described below and in Jupyter notebooks.
 
@@ -38,7 +38,7 @@ True SSH
 
 ## Observations
 
-**A) Managing observations sparse in time: full SSH field set up**   
+**A) Managing observations sparse in time: Full field observations set up**   
 
 The first set up provides observations of the full SSH fields every 5 day:  
  
@@ -46,7 +46,7 @@ True SSH        |  Full field observations (A)
 :-------------------------:|:-------------------------:
  ![animation](figures/ssh_eval_movie.gif)  |  ![animation](figures/ssh_obs_fullfields_movie.gif) 
 
-**B) Managing observations sparse in space: everyday jason1 set up** 
+**B) Managing observations sparse in space: Everyday jason1 observations set up** 
 
 The second set up provides observations of one-dimensional Jason1-like SSH data (corresponding to the full 42 day availability of that satellite data) but available every day:  
 
@@ -54,7 +54,7 @@ True SSH        |  Everyday jason1 observations (B)
 :-------------------------:|:-------------------------:
  ![animation](figures/ssh_eval_movie.gif)  |  ![animation](figures/ssh_obs_jasonlike_movie.gif) 
  
-**C) Managing realistic observations: realistic altimetric set up**
+**C) Managing realistic observations: Realistic observations set up**
 
 The third set up provides observations of one-dimensional Nadir-like SSH data from a constellation of 4 Nadir satellites (Envisat, Jason1, Geosat2 and Topex-Poseidon):  
 
@@ -121,29 +121,33 @@ The data needed for the DC are available [here](https://ige-meom-opendap.univ-gr
 
 ```
 
-
+### Reference evaluation data
 To start out download the reference dataset during the evaluation period from the data server in your notebook by running the following command:
 
 ```shell
 !wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/2022b_SSH_QG_mapping/dc_qg_eval.tar.gz
 ```
 
+### Observation data
 Then, download the observation datasets (for the 3 set ups) from the data server in your notebook by running the following command:
 
+**Full field observations (A)**
 ```shell
 !wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/2022b_SSH_QG_mapping/dc_qg_obs_fullfields.tar.gz
 ```
 
+**Everyday jason1 observations (B)**
 ```shell
 !wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/2022b_SSH_QG_mapping/dc_qg_obs_jasonlike.tar.gz
 ```
 
+**Realistic observations (C)**
 ```shell
 !wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/2022b_SSH_QG_mapping/dc_qg_obs_nadirlike.tar.gz
 ```
 
-
-For training purposes you can also download the training dataset, in which the data are uncorrelated to the evaluation data, from the data server in your notebook by running the following command:
+### Training data
+For training or tuning purposes you can also download the training dataset, in which the data are uncorrelated to the evaluation data and at higher temporal resolution (1 model output every hour) during 63 days, from the data server in your notebook by running the following command:
 
 ```shell
 !wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/2022b_SSH_QG_mapping/dc_qg_train.tar.gz
