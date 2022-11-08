@@ -30,7 +30,7 @@ A baseline reconstruction method is provided (see below) and the practical goal 
 # 2. Specific experimental choices
 
 ## Reference simulation
-The reference simulation is a 1.5 layer quasi-geostrophic simulation generated using the [torch-qg](https://github.com/hrkz/torchqg) package. The run can be downloaded from [qg-simulation](https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/dc2022b_q/qg_sim.nc) (see Download the data). 
+The reference simulation is a 1.5 layer quasi-geostrophic simulation generated using the model described in Ubelmann et al. (2015). The run can be downloaded from [dc_qg_eval](https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/2022b_SSH_QG_mapping/dc_qg_eval.tar.gz) (see Download the data). 
 
 True SSH      
 :-------------------------: 
