@@ -42,7 +42,7 @@ True SSH
 
 The first set up provides observations of the full SSH fields every 5 time steps:  
  
-True SSH        |  Full field observation (A)  
+True SSH        |  Full field observations (A)  
 :-------------------------:|:-------------------------:
  ![animation](figures/ssh_eval_movie.gif)  |  ![animation](figures/ssh_obs_fullfields_movie.gif) 
 
@@ -50,7 +50,7 @@ True SSH        |  Full field observation (A)
 
 The second set up provides observations of one-dimensional Nadir-like SSH data every 5 time steps:  
 
-True SSH        |  Full field observation (A)  
+True SSH        |  Everyday jason1 observations (B)  
 :-------------------------:|:-------------------------:
  ![animation](figures/ssh_eval_movie.gif)  |  ![animation](figures/ssh_obs_jasonlike_movie.gif) 
  
@@ -58,7 +58,7 @@ True SSH        |  Full field observation (A)
 
 The third set up provides observations of one-dimensional Nadir-like SSH data every 20 time steps:  
 
-True SSH        |  Full field observation (A)  
+True SSH        |  Realistic observations (C)  
 :-------------------------:|:-------------------------:
  ![animation](figures/ssh_eval_movie.gif)  |  ![animation](figures/ssh_obs_nadirlike_movie.gif) 
 
@@ -153,7 +153,7 @@ Cross-functional modules are gathered in the `src` directory. They include tools
 
 # 5. To compete 
 
-## A) Full SSH field set up  
+## A) Full field observations  
 
 **Leaderboard**
 
@@ -162,7 +162,7 @@ Cross-functional modules are gathered in the `src` directory. They include tools
 | baseline OI |        |            |                    |             | Covariances not tuned   |  [perform_the_baseline.ipynb](notebooks/perform_the_baseline.ipynb)|
 
 
-## B) Dense alimetric data set up
+## B) Everyday jason1 observations
 
 **Leaderboard**
 
@@ -172,7 +172,7 @@ Cross-functional modules are gathered in the `src` directory. They include tools
 
 
 
-## C) Realistic alimetric data set up
+## C) Realistic observations
 
 **Leaderboard**
 
